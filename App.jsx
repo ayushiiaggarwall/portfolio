@@ -10,19 +10,20 @@ const projects = [
     name: "Field Sales Tracker",
     // GLOBAL FIX: Removed "That's the point."
     description: "Built for a manufacturer tracking 40+ field reps on WhatsApp. Now they don't have to.",
-    tags: ["Antigravity", "Next.js", "Supabase"],
+    tags: ["Antigravity"],
     signal: "Real companies · Daily active users",
     signalType: "success",
     link: "https://salesapp.thetomorrowsteam.com/",
     heroImage: "/image/field-sales-tracker.png",
+    problemImage: "/image/field-sales-tracker.png",
+    solutionImage: "/image/field-sales-tracker.png",
     // SEC 3.1: Full overview replacement
     overview: "It started with one manufacturer drowning in WhatsApp messages, spreadsheets, and phone calls. Managers had no real-time visibility into what 40+ field reps were doing, deals were slipping through the cracks, and nobody had a single source of truth. I built a system to fix that. It now runs in production across 10 companies.",
     // SEC 3.1: Stat bar data
     statBar: [
-      { label: "Built with", value: "Antigravity" },
-      { label: "Status", value: "Live in production" },
       { label: "Companies", value: "10" },
-      { label: "Users", value: "Daily active" },
+      { label: "Sales Users", value: "50+" },
+      {label: "Manager Users", value: "10" },
     ],
     problem: "Manufacturers with large field teams were drowning in WhatsApp messages, spreadsheets, and phone calls. Managers had no real-time visibility into what reps were doing, deals were slipping through the cracks, and nobody had a single source of truth.",
     // SEC 3.2: We → I fix
@@ -35,11 +36,11 @@ const projects = [
       "Daily reports and streak tracking",
       "Works on any phone, no app install needed"
     ],
-    techStack: ["Antigravity", "Next.js", "Supabase", "WhatsApp Business API", "React", "PostgreSQL"],
+    techStack: ["Antigravity"],
     // SEC 3.3: Project-specific How I Built It
     techDescription: "Antigravity for AI-assisted rapid development.\nNext.js and React for the frontend.\nSupabase and PostgreSQL for real-time data.\nWhatsApp Business API for native rep reporting.\nBuilt for production from day one - not a prototype.\nNow running across 10 companies.",
     video: "YOUR_FIELD_SALES_VIDEO_URL",
-    year: "2024",
+    year: "2025",
     category: "B2B SaaS",
     // SEC 3.4: CTA with demo credentials
     ctaTitle: "This app runs in production with real companies.",
@@ -50,49 +51,47 @@ const projects = [
     statusLabel: "Live in production",
   },
   {
-    id: 'deep-researcher-agent',
-    name: "Deep Researcher Agent",
-    description: "Multi-agent AI that doesn't just answer questions - it goes out and actually researches them.",
-    tags: ["Antigravity", "LangChain", "LangGraph"],
-    signal: "1st Place · Outskill AI Hackathon",
-    signalType: "trophy",
-    link: "https://my-deep-researcher-agent.streamlit.app/",
-    heroImage: "/image/deep-researcher.png",
-    // SEC 4.1: Full overview replacement
-    overview: "Most AI tools tell you what they already know. That's not research. That's recall. I wanted to build something that could actually go out, read the web, debate its own findings, and come back with a structured answer - the way a research analyst would, but in minutes. This won 1st place at the Outskill AI Hackathon.",
-    problem: "LLMs give confident answers from stale training data. For anything time-sensitive or nuanced, you need something that actually goes out and reads the web - not just recites what it memorized.",
-    solution: "Built a network of specialized agents: one plans the research strategy, others execute parallel web searches, one synthesizes findings, and a final layer quality-checks the output. The result feels less like chatting with an AI and more like having a research assistant.",
-    features: [
-      "Multi-agent architecture with specialized roles",
-      "Active web research with real-time data",
-      "Parallel search execution for speed",
-      "Source citation and confidence scoring",
-      "Iterative refinement based on findings",
-      "Hackathon-winning reliability"
-    ],
-    techStack: ["LangChain", "LangGraph", "Python", "Streamlit", "OpenAI", "Tavily Search"],
-    // SEC 4.2: Project-specific How I Built It
-    techDescription: "Python and LangGraph for agent orchestration.\nTavily Search for real-time web research.\nLangChain for agent memory and tool use.\nStreamlit to ship a working demo fast without frontend overhead.\nOpenAI for synthesis and quality checking.\nBuilt in a hackathon sprint. Won first place.",
-    video: "https://youtu.be/Ly1F2DNx2T4?si=R787RI5EMD0F77P2",
-    year: "2024",
-    category: "AI / Research",
-    // SEC 4.1: Status tag fix
-    statusLabel: "Live Demo Available",
-    // SEC 4.3: CTA honest about API key
-    ctaTitle: "The Streamlit demo is live.",
-    ctaDescription: "Enter your API key and watch it research any topic in real time.",
-    ctaButtonText: "Launch Live Demo",
-    ctaButtonAltLink: "https://youtu.be/Ly1F2DNx2T4?si=VOrgMarmJhWz5KVs",
-  },
+  id: 'deep-researcher-agent',
+  name: "Deep Researcher Agent",
+  description: "AI-powered research platform with specialized agents for comprehensive deep research.",
+  tags: ["Antigravity", "LangChain", "LangGraph", "Streamlit", "Rag"],
+  signal: "1st Place · Outskill AI Hackathon",
+  signalType: "trophy",
+  link: "https://my-deep-researcher-agent.streamlit.app/",
+  heroImage: "/image/deep-researcher.png",
+  overview: "A deep research assistant that helps you investigate any topic thoroughly. Upload documents (PDFs, Word, text files) or enter a question - specialized agents handle the rest. Unlike basic search, this platform deploys multiple autonomous agents that cross-validate sources, synthesize findings, and cite everything. Built during a 48-hour hackathon and won 1st place at the Outskill AI Hackathon.",
+  problem: "Standard AI tools give generic answers from limited training data. They don't cross-check facts, can't analyze your own documents deeply, and have no structured research workflow. For serious investigation – whether you're a student, analyst, journalist, or professional – you need specialized agents, multiple research modes, and the ability to ground answers in your own files.",
+  solution: "Built a multi-agent research platform where you upload documents, pick a research mode, and let specialized agents do the heavy lifting. The Searcher finds relevant sources. The Summarizer condenses long content. The Fact-Checker verifies claims. The Insight Miner finds patterns across documents. Three research modes let you go from quick scan to exhaustive report. All sources are cited. Nothing is hallucinated.",
+  features: [
+    "Searcher Agent – Finds relevant, up-to-date sources from web and internal docs",
+    "Summarizer Agent – Condenses long documents or multiple URLs into concise briefs",
+    "Fact-Checker Agent – Verifies claims against trusted sources and highlights contradictions",
+    "Insight Miner Agent – Identifies patterns, gaps, and connections across documents",
+    "Upload PDFs, DOCX, TXT, Markdown, or CSV – agents extract and cross-reference",
+    "Three research modes: Express Scan (30 sec), Deep Analysis (3–5 min), Exhaustive Report (10–15 min)"
+  ],
+  techStack: ["Antigravity", "LangChain", "LangGraph", "Streamlit", "Rag"],
+  techDescription: "Python and LangGraph for agent orchestration.\nTavily Search for real-time web research.\nLangChain for agent memory and tool use.\nStreamlit to ship a working demo fast without frontend overhead.\nOpenAI for synthesis and quality checking.\nBuilt in a hackathon sprint. Won first place.\n\nSupported uploads: PDF, DOCX, TXT, MD, CSV.\nAgents extract, index, and cross-reference uploaded content alongside external sources.",
+  video: "https://youtu.be/Ly1F2DNx2T4?si=R787RI5EMD0F77P2",
+  year: "2025",
+  category: "AI / Research",
+  statusLabel: "Live Demo Available",
+  ctaTitle: "The Streamlit demo is live.",
+  ctaDescription: "Enter your research question or paste URLs - upload a document if you have one. Then watch specialized agents do deep research.",
+  ctaButtonText: "Launch Live Demo",
+  ctaButtonAltLink: "https://my-deep-researcher-agent.streamlit.app/"
+},
   {
     id: 'travel-ease',
     name: "Travel Ease",
     description: "Your AI travel agent. Itinerary, flights, hotels, weather, food - everything. No agency fees.",
-    tags: ["Lovable", "OpenAI", "Booking.com API", "OpenWeather API", "React", "TypeScript"],
+    tags: ["Lovable", "OpenAI", "Skyscanner API", "Tripadvisor API", "OpenWeather API", "React", "TypeScript"],
     signal: "1st Place · Outskill AI Hackathon",
     signalType: "trophy",
     link: "https://lets-travel-with-ease.lovable.app/",
     heroImage: "/image/travel-ease.png",
+    problemImage: "/image/travel1.png",
+    solutionImage: "/image/travel-ease.png",
     // SEC 5.1: Full overview replacement
     overview: "Planning a trip means 6 open tabs, manual price comparisons, and an itinerary you're still not sure about. Travel agents fix this but charge a premium and aren't available at 2am. I built Travel Ease during a 48-hour hackathon sprint. It won first place at the Outskill AI Hackathon.",
     problem: "Travel planning is genuinely painful - you're jumping between 6 different tabs, comparing prices manually, and still not sure if the itinerary makes geographic sense. Travel agents solve this but cost a premium and don't work at 2am.",
@@ -106,11 +105,11 @@ const projects = [
       "Budget optimization across the full trip",
       "Zero agency fees, instant results"
     ],
-    techStack: ["Lovable", "OpenAI", "Booking.com API", "OpenWeather API", "React", "TypeScript"],
+    techStack: ["Lovable", "OpenAI", "Skyscanner API", "Tripadvisor API", "OpenWeather API", "React", "TypeScript"],
     // SEC 5.3: Project-specific How I Built It
-    techDescription: "Built on Lovable for rapid frontend development.\nOpenAI for itinerary generation and travel recommendations.\nBooking.com API for real-time flight and hotel pricing.\nOpenWeather API for accurate travel-date forecasts.\nReact and TypeScript for a clean, reliable frontend.\nBuilt and shipped in 48 hours during a hackathon.\nWon 1st place at the Outskill AI Engineering Hackathon.",
+    techDescription: "Built on Lovable for rapid frontend development.\nOpenAI for itinerary generation and travel recommendations.\nSkyscanner API for real-time flight and Tripadvisor API for hotel pricing.\nOpenWeather API for accurate travel-date forecasts.\nReact and TypeScript for a clean, reliable frontend.\nBuilt and shipped in 48 hours during a hackathon.\nWon 1st place at the Outskill AI Engineering Hackathon.",
     video: "https://youtu.be/5Z2CeX2XInI?si=7XsDva2ZCCO2e-Hi",
-    year: "2024",
+    year: "2025",
     category: "Consumer AI",
     statusLabel: "Live and Public",
     // SEC 5.4: CTA as invitation
@@ -127,13 +126,15 @@ const projects = [
     signalType: "users",
     link: "https://thetomorrowsteam.com/",
     heroImage: "/image/tomorrowsteam.png",
+    problemImage: "/image/tomorrowsteam.png",
+    solutionImage: "/image/tomorrowsteam.png",
     // SEC 6.1: Full overview replacement - community before platform
     overview: "I started The Tomorrows Team before I knew how to build products. It began as offline sessions for people who wanted to get better at speaking, thinking, and showing up in rooms that matter. When it grew, I built the platform for it. Not the other way around.",
     // SEC 6.1: Real numbers stat bar
     statBar: [
-      { label: "Founded", value: "2024" },
-      { label: "Members", value: "[X]" },
-      { label: "Sessions run", value: "[X]" },
+      { label: "Founded", value: "2025" },
+      { label: "Members", value: "50+" },
+      { label: "Sessions run", value: "10+" },
       { label: "Status", value: "Active" },
     ],
     problem: "Most people who want to improve their communication and confidence don't have a structured path or community around it. Courses feel transactional, coaches are expensive, and social media is noise.",
@@ -141,17 +142,15 @@ const projects = [
     solution: "I built a focused community platform where members work on real communication skills together - with structured programs, peer accountability, and a founder who's in the trenches with them. Not just content, but belonging.",
     // SEC 6.3: Reordered features - founder involvement FIRST
     features: [
-      "Direct founder involvement and mentorship",
       "Structured group discussion sessions and speaking exercises",
       "Live sessions and practice environments",
       "Peer accountability and community challenges",
-      "Progress tracking and streaks",
-      "Confidence-building exercises and tracks",
+      "Progress tracking and streaks"
     ],
-    techStack: ["Lovable", "Supabase", "React", "Stripe", "Real-time Channels"],
+    techStack: ["Lovable", "Supabase"],
     // SEC 6.4: Project-specific How I Built It
-    techDescription: "Built on Lovable for rapid development.\nSupabase for real-time community features and member management.\nStripe for membership payments.\nReal-time Channels for live session infrastructure.\nStarted as a WhatsApp group.\nNow it has its own platform.",
-    year: "2024",
+    techDescription: "Built on Lovable for rapid development.\nSupabase for real-time community features and member management.\nReal-time Channels for live session infrastructure.\nStarted as a whatsaap community.\nNow it has its own platform.",
+    year: "2025",
     category: "Community Platform",
     statusLabel: "Active",
     // SEC 6.5: Community CTA — cannot be demoed
@@ -163,16 +162,18 @@ const projects = [
     id: 'carpenter-rewards',
     name: "Carpenter Rewards",
     description: "Points. Commissions. Bikes. A loyalty system for the people who actually sell your product.",
-    tags: ["Antigravity"],
+    tags: ["Lovable", "Twilio"],
     signal: "Live in production · B2B manufacturing",
     signalType: "success",
     link: "https://app.saraswatiplyhouse.com",
     heroImage: "/image/carpenter-reward.png",
+    problemImage: "/image/carpenter-reward.png",
+    solutionImage: "/image/carpenter-reward.png",
     // SEC 7.1: Full overview replacement
     overview: "In building materials, carpenters decide which brand gets installed. They walk into every home renovation and make the call. Most manufacturers have no way to recognise or reward that influence. Saraswati Ply House did it manually - phone calls, handwritten registers, best guesses. I built a system to change that.",
     // SEC 7.1: Stat bar
     statBar: [
-      { label: "Built with", value: "Antigravity" },
+      { label: "Built with", value: "Lovable" },
       { label: "Status", value: "Live in production" },
       { label: "Business", value: "Saraswati Ply House" },
       { label: "Carpenters", value: "300+" },
@@ -184,21 +185,18 @@ const projects = [
       "Points earned automatically on every purchase",
       "Real-time commission tracking for reps",
       "Tiered rewards catalog - bikes, appliances, vouchers",
-      "QR-code based purchase verification",
-      "Leaderboards to drive competitive behavior",
       "Admin dashboard for full program management"
     ],
-    techStack: ["Antigravity", "React", "Node.js", "PostgreSQL", "QR Code API", "SMS Integration"],
+    techStack: ["Lovable", "Twilio"],
     // SEC 7.3: Project-specific How I Built It
     techDescription: "Built on Antigravity for rapid AI-assisted development.\nReact and Node.js for the full application stack.\nPostgreSQL for purchase history and points data.\nQR Code API for field purchase verification -\ncarpenters scan at point of sale, points update instantly.\nSMS Integration for reward notifications -\ncarpenters get their balance update without opening an app.\nBuilt for a real 30-year-old B2B manufacturing business.\nCurrently live and in active use.",
-    year: "2024",
+    year: "2025",
     category: "B2B Loyalty",
     statusLabel: "Live in production",
     // SEC 7.4: Honest private tool CTA
     ctaTitle: "This app runs in production for Saraswati Ply House and their network of carpenters.",
-    ctaDescription: "Not open for public signup - it is a live business tool. Reach out if you would like a walkthrough.",
-    ctaEmail: "ayushi@merkri.media",
-    ctaButtonText: "Request a Walkthrough",
+    ctaDescription: "See the live loyalty system in action.",
+    ctaButtonText: "Launch Live Demo",
   }
 ];
 
@@ -377,7 +375,7 @@ const ProjectDetail = () => {
             <div className="p-6 bg-white/[0.03] border border-white/[0.06] rounded-2xl">
               <p className="text-xs text-gray-500 uppercase tracking-wider mb-3">Built with</p>
               <div className="flex flex-wrap gap-2">
-                {project.techStack.slice(0, 4).map(t => (
+                {project.techStack.map(t => (
                   <span key={t} className="px-2.5 py-1 bg-violet-600/15 border border-violet-500/20 rounded-lg text-violet-300 text-xs font-medium">
                     {t}
                   </span>
@@ -399,27 +397,27 @@ const ProjectDetail = () => {
         {/* GLOBAL FIX 1 + 2: Consistent violet circles, correct numbering 01-05 */}
 
         {/* 01 — The Problem */}
-        <div className="mb-24">
+        <div className="mb-12">
           <div className="flex items-center gap-4 mb-8">
             <div className="w-8 h-8 rounded-full bg-violet-600/20 border border-violet-500/30 flex items-center justify-center flex-shrink-0">
               <span className="text-violet-400 text-xs font-bold">01</span>
             </div>
             <h2 className="text-3xl font-bold text-white">The Problem</h2>
           </div>
-          <div className="pl-12 max-w-3xl">
+          <div className="pl-12">
             <p className="text-xl text-gray-300 leading-relaxed">{project.problem}</p>
           </div>
         </div>
 
         {/* 02 — The Solution */}
-        <div className="mb-24">
+        <div className="mb-12">
           <div className="flex items-center gap-4 mb-8">
             <div className="w-8 h-8 rounded-full bg-violet-600/20 border border-violet-500/30 flex items-center justify-center flex-shrink-0">
               <span className="text-violet-400 text-xs font-bold">02</span>
             </div>
             <h2 className="text-3xl font-bold text-white">The Solution</h2>
           </div>
-          <div className="pl-12 max-w-3xl">
+          <div className="pl-12">
             <p className="text-xl text-gray-300 leading-relaxed">{project.solution}</p>
           </div>
         </div>
@@ -456,16 +454,6 @@ const ProjectDetail = () => {
           <div className="pl-12">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
               <div>
-                <div className="flex flex-wrap gap-3 mb-8">
-                  {project.techStack.map((tech, i) => (
-                    <span
-                      key={i}
-                      className="px-4 py-2 bg-white/[0.04] border border-white/[0.08] rounded-xl text-gray-200 text-sm font-medium hover:bg-violet-600/15 hover:border-violet-500/30 hover:text-violet-300 transition-colors cursor-default"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
                 {/* GLOBAL FIX 5: Project-specific tech description, not generic template */}
                 <p className="text-gray-300 text-xl max-w-2xl leading-relaxed whitespace-pre-line">
                   {project.techDescription}
@@ -503,9 +491,6 @@ const ProjectDetail = () => {
           <div className="relative z-10">
             {/* Section number */}
             <div className="flex items-center justify-center gap-3 mb-6">
-              <div className="w-8 h-8 rounded-full bg-violet-600/20 border border-violet-500/30 flex items-center justify-center">
-                <span className="text-violet-400 text-xs font-bold">05</span>
-              </div>
               <p className="text-sm uppercase tracking-widest text-violet-400 font-semibold">Try It Yourself</p>
             </div>
 
@@ -799,21 +784,7 @@ function Portfolio() {
         </div>
       </section>
 
-      {/* SEC 2.4: Stack section — between projects and footer */}
-      <section className="py-16 px-6 relative z-10">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex flex-wrap justify-center gap-3">
-            {stackTags.map(tag => (
-              <span
-                key={tag}
-                className="px-4 py-2 bg-white/[0.03] border border-white/[0.08] rounded-full text-gray-400 text-sm font-medium hover:text-violet-300 hover:border-violet-500/30 transition-colors"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-        </div>
-      </section>
+      
 
       {/* Footer / Contact */}
       <footer id="contact" className="border-t border-violet-500/20 py-24 px-6 relative z-10">
