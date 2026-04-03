@@ -1,24 +1,34 @@
 // App.jsx
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Routes, Route, useNavigate, useParams } from 'react-router-dom';
-import { ExternalLink, ChevronRight, ArrowUpRight, X, ChevronLeft, ChevronRight as ChevronRightIcon } from 'lucide-react';
+import { ExternalLink, ChevronRight, ArrowUpRight, X, ChevronLeft, ChevronRight as ChevronRightIcon, Linkedin, Mail } from 'lucide-react';
 
 const projects = [
   {
     id: 'field-sales-tracker',
     name: "Field Sales Tracker",
-    description: "Built for a manufacturer tracking 40+ field reps on WhatsApp. Now they don't have to. That's the point.",
+    // GLOBAL FIX: Removed "That's the point."
+    description: "Built for a manufacturer tracking 40+ field reps on WhatsApp. Now they don't have to.",
     tags: ["Antigravity", "Next.js", "Supabase"],
     signal: "Real companies · Daily active users",
     signalType: "success",
     link: "https://salesapp.thetomorrowsteam.com/",
     heroImage: "/image/field-sales-tracker.png",
-    overview: "A comprehensive WhatsApp-based field sales tracking solution designed for manufacturers. Eliminates the need for manual tracking by automating sales data collection from 40+ field representatives in real-time.",
+    // SEC 3.1: Full overview replacement
+    overview: "It started with one manufacturer drowning in WhatsApp messages, spreadsheets, and phone calls. Managers had no real-time visibility into what 40+ field reps were doing, deals were slipping through the cracks, and nobody had a single source of truth. I built a system to fix that. It now runs in production across 10 companies.",
+    // SEC 3.1: Stat bar data
+    statBar: [
+      { label: "Built with", value: "Antigravity" },
+      { label: "Status", value: "Live in production" },
+      { label: "Companies", value: "10" },
+      { label: "Users", value: "Daily active" },
+    ],
     problem: "Manufacturers with large field teams were drowning in WhatsApp messages, spreadsheets, and phone calls. Managers had no real-time visibility into what reps were doing, deals were slipping through the cracks, and nobody had a single source of truth.",
-    solution: "We built a system where reps report naturally through WhatsApp — the tool they already use — while managers get a live dashboard with every update, location, and deal stage. Zero behavior change required from the field.",
+    // SEC 3.2: We → I fix
+    solution: "I built a system where reps report naturally through WhatsApp - the tool they already use - while managers get a live dashboard with every update, location, and deal stage. Zero behavior change required from the field.",
     features: [
-      "WhatsApp-native reporting — reps just message as usual",
+      "WhatsApp-native reporting - reps just message as usual",
       "Real-time dashboard for managers with live rep activity",
       "40+ field rep management at once",
       "Automated data collection and categorization",
@@ -26,22 +36,31 @@ const projects = [
       "Works on any phone, no app install needed"
     ],
     techStack: ["Antigravity", "Next.js", "Supabase", "WhatsApp Business API", "React", "PostgreSQL"],
-    
+    // SEC 3.3: Project-specific How I Built It
+    techDescription: "Antigravity for AI-assisted rapid development.\nNext.js and React for the frontend.\nSupabase and PostgreSQL for real-time data.\nWhatsApp Business API for native rep reporting.\nBuilt for production from day one — not a prototype.\nNow running across 10 companies.",
     video: "YOUR_FIELD_SALES_VIDEO_URL",
     year: "2024",
-    category: "B2B SaaS"
+    category: "B2B SaaS",
+    // SEC 3.4: CTA with demo credentials
+    ctaTitle: "This app runs in production with real companies.",
+    ctaDescription: "Try it with demo access:",
+    ctaCredentials: { email: "[your demo email here]", password: "[your demo password here]" },
+    ctaButtonText: "Launch Live Demo ",
+    // SEC 4.1 status tag (field sales stays as-is)
+    statusLabel: "Live in production",
   },
   {
     id: 'deep-researcher-agent',
     name: "Deep Researcher Agent",
-    description: "Multi-agent AI that doesn't just answer questions — it goes out and actually researches them.",
+    description: "Multi-agent AI that doesn't just answer questions - it goes out and actually researches them.",
     tags: ["Antigravity", "LangChain", "LangGraph"],
     signal: "1st Place · Outskill AI Hackathon",
     signalType: "trophy",
     link: "https://my-deep-researcher-agent.streamlit.app/",
     heroImage: "/image/deep-researcher.png",
-    overview: "An advanced multi-agent AI research system that goes beyond simple question answering. It actively conducts comprehensive research using multiple specialized agents to gather, analyze, and synthesize information.",
-    problem: "LLMs give confident answers from stale training data. For anything time-sensitive or nuanced, you need something that actually goes out and reads the web — not just recites what it memorized.",
+    // SEC 4.1: Full overview replacement
+    overview: "Most AI tools tell you what they already know. That's not research. That's recall. I wanted to build something that could actually go out, read the web, debate its own findings, and come back with a structured answer - the way a research analyst would, but in minutes. This won 1st place at the Outskill AI Hackathon.",
+    problem: "LLMs give confident answers from stale training data. For anything time-sensitive or nuanced, you need something that actually goes out and reads the web - not just recites what it memorized.",
     solution: "Built a network of specialized agents: one plans the research strategy, others execute parallel web searches, one synthesizes findings, and a final layer quality-checks the output. The result feels less like chatting with an AI and more like having a research assistant.",
     features: [
       "Multi-agent architecture with specialized roles",
@@ -52,23 +71,34 @@ const projects = [
       "Hackathon-winning reliability"
     ],
     techStack: ["LangChain", "LangGraph", "Python", "Streamlit", "OpenAI", "Tavily Search"],
-    
+    // SEC 4.2: Project-specific How I Built It
+    techDescription: "Python and LangGraph for agent orchestration.\nTavily Search for real-time web research.\nLangChain for agent memory and tool use.\nStreamlit to ship a working demo fast without frontend overhead.\nOpenAI for synthesis and quality checking.\nBuilt in a hackathon sprint. Won first place.",
     video: "https://youtu.be/Ly1F2DNx2T4?si=VOrgMarmJhWz5KVs",
     year: "2024",
-    category: "AI / Research"
+    category: "AI / Research",
+    // SEC 4.1: Status tag fix
+    statusLabel: "Live Demo Available",
+    // SEC 4.3: CTA honest about API key
+    ctaTitle: "The Streamlit demo is live.",
+    ctaDescription: "Enter your API key and watch it research any topic in real time.",
+    ctaButtonText: "Launch Live Demo",
+    ctaButtonAlt: "Watch Full Demo Video",
+    ctaButtonAltLink: "https://youtu.be/Ly1F2DNx2T4?si=VOrgMarmJhWz5KVs",
   },
   {
     id: 'travel-ease',
     name: "Travel Ease",
-    description: "Your AI travel agent. Itinerary, flights, hotels, weather, food — everything. No agency fees.",
-    tags: ["Lovable"],
+    description: "Your AI travel agent. Itinerary, flights, hotels, weather, food - everything. No agency fees.",
+    tags: ["Lovable", "OpenAI", "Booking.com API", "OpenWeather API", "React", "TypeScript"],
     signal: "1st Place · Outskill AI Hackathon",
     signalType: "trophy",
     link: "https://lets-travel-with-ease.lovable.app/",
     heroImage: "/image/travel-ease.png",
-    overview: "An AI-powered travel planning assistant that handles everything from itinerary creation to flight and hotel bookings. Comprehensive travel solutions including weather forecasts and food recommendations.",
-    problem: "Travel planning is genuinely painful — you're jumping between 6 different tabs, comparing prices manually, and still not sure if the itinerary makes geographic sense. Travel agents solve this but cost a premium and don't work at 2am.",
-    solution: "One conversation handles everything. Tell it where you want to go, your budget, and your vibe. It builds a coherent itinerary, checks weather, suggests food, and finds bookable options — all without you switching contexts.",
+    // SEC 5.1: Full overview replacement
+    overview: "Planning a trip means 6 open tabs, manual price comparisons, and an itinerary you're still not sure about. Travel agents fix this but charge a premium and aren't available at 2am. I built Travel Ease during a 48-hour hackathon sprint. It won first place at the Outskill AI Hackathon.",
+    problem: "Travel planning is genuinely painful - you're jumping between 6 different tabs, comparing prices manually, and still not sure if the itinerary makes geographic sense. Travel agents solve this but cost a premium and don't work at 2am.",
+    // SEC 5.2: "switching contexts" → "all in one place"
+    solution: "One conversation handles everything. Tell it where you want to go, your budget, and your vibe. It builds a coherent itinerary, checks weather, suggests food, and finds bookable options - all in one place.",
     features: [
       "Full itinerary generation from a single prompt",
       "Flight and hotel search with real pricing",
@@ -78,10 +108,16 @@ const projects = [
       "Zero agency fees, instant results"
     ],
     techStack: ["Lovable", "OpenAI", "Booking.com API", "OpenWeather API", "React", "TypeScript"],
+    // SEC 5.3: Project-specific How I Built It
+    techDescription: "Built on Lovable for rapid frontend development.\nOpenAI for itinerary generation and travel recommendations.\nBooking.com API for real-time flight and hotel pricing.\nOpenWeather API for accurate travel-date forecasts.\nReact and TypeScript for a clean, reliable frontend.\nBuilt and shipped in 48 hours during a hackathon.\nWon 1st place at the Outskill AI Engineering Hackathon.",
     video: "https://youtu.be/5Z2CeX2XInI?si=7XsDva2ZCCO2e-Hi",
-    
     year: "2024",
-    category: "Consumer AI"
+    category: "Consumer AI",
+    statusLabel: "Live and Public",
+    // SEC 5.4: CTA as invitation
+    ctaTitle: "Plan your next trip right now.",
+    ctaDescription: "Tell it where you want to go - watch it build your entire itinerary.",
+    ctaButtonText: "Launch Live Demo ",
   },
   {
     id: 'the-tomorrows-team',
@@ -92,25 +128,37 @@ const projects = [
     signalType: "users",
     link: "https://thetomorrowsteam.com/",
     heroImage: "/image/tomorrowsteam.png",
-    overview: "A community platform for individuals committed to personal growth through improved communication, confidence building, and preparation. Active community of real members focused on self-improvement.",
+    // SEC 6.1: Full overview replacement - community before platform
+    overview: "I started The Tomorrows Team before I knew how to build products. It began as offline sessions for people who wanted to get better at speaking, thinking, and showing up in rooms that matter. When it grew, I built the platform for it. Not the other way around.",
+    // SEC 6.1: Real numbers stat bar
+    statBar: [
+      { label: "Founded", value: "2024" },
+      { label: "Members", value: "[X]" },
+      { label: "Sessions run", value: "[X]" },
+      { label: "Status", value: "Active" },
+    ],
     problem: "Most people who want to improve their communication and confidence don't have a structured path or community around it. Courses feel transactional, coaches are expensive, and social media is noise.",
-    solution: "Built a focused community platform where members work on real communication skills together — with structured programs, peer accountability, and a founder who's in the trenches with them. Not just content, but belonging.",
+    // SEC 6.2: We → I fix
+    solution: "I built a focused community platform where members work on real communication skills together - with structured programs, peer accountability, and a founder who's in the trenches with them. Not just content, but belonging.",
+    // SEC 6.3: Reordered features - founder involvement FIRST
     features: [
-      "Structured communication development programs",
-      "Peer accountability and community challenges",
-      "Confidence-building exercises and tracks",
+      "Direct founder involvement and mentorship",
+      "Structured group discussion sessions and speaking exercises",
       "Live sessions and practice environments",
+      "Peer accountability and community challenges",
       "Progress tracking and streaks",
-      "Direct founder involvement and mentorship"
+      "Confidence-building exercises and tracks",
     ],
     techStack: ["Lovable", "Supabase", "React", "Stripe", "Real-time Channels"],
-    images: [
-      "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1200&q=80",
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&q=80",
-      "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1200&q=80",
-    ],
+    // SEC 6.4: Project-specific How I Built It
+    techDescription: "Built on Lovable for rapid development.\nSupabase for real-time community features and member management.\nStripe for membership payments.\nReal-time Channels for live session infrastructure.\nStarted as a WhatsApp group.\nNow it has its own platform.",
     year: "2024",
-    category: "Community Platform"
+    category: "Community Platform",
+    statusLabel: "Active",
+    // SEC 6.5: Community CTA — cannot be demoed
+    ctaTitle: "The Tomorrows Team is live and open.",
+    ctaDescription: "Join the community or explore the platform.",
+    ctaButtonText: "Visit The Tomorrows Team ",
   },
   {
     id: 'carpenter-rewards',
@@ -121,25 +169,37 @@ const projects = [
     signalType: "success",
     link: "https://app.saraswatiplyhouse.com",
     heroImage: "/image/carpenter-reward.png",
-    overview: "A comprehensive loyalty and rewards system for Saraswati Ply House. Tracks points, manages commissions, and drives sales through tangible incentives for the people who actually move product.",
-    problem: "In B2B manufacturing, the people who actually influence purchase decisions — carpenters, contractors, retailers — have zero reason to be loyal to one brand over another. Everyone's competing on price alone.",
-    solution: "Built a points and commission system that makes loyalty tangible. Carpenters earn points on every Saraswati purchase, track their commissions in real time, and redeem rewards like bikes and appliances. Suddenly brand loyalty has a face.",
+    // SEC 7.1: Full overview replacement
+    overview: "In building materials, carpenters decide which brand gets installed. They walk into every home renovation and make the call. Most manufacturers have no way to recognise or reward that influence. Saraswati Ply House did it manually - phone calls, handwritten registers, best guesses. I built a system to change that.",
+    // SEC 7.1: Stat bar
+    statBar: [
+      { label: "Built with", value: "Antigravity" },
+      { label: "Status", value: "Live in production" },
+      { label: "Business", value: "Saraswati Ply House" },
+      { label: "Carpenters", value: "300+" },
+    ],
+    problem: "In B2B manufacturing, the people who actually influence purchase decisions - carpenters, contractors, retailers - have zero reason to be loyal to one brand over another. Everyone's competing on price alone.",
+    // SEC 7.2: We → I + QR/SMS context added
+    solution: "I built a points and commission system that makes loyalty tangible. Carpenters scan a QR code at the point of sale - points update instantly. They get an SMS notification so they know their balance without opening an app.",
     features: [
       "Points earned automatically on every purchase",
       "Real-time commission tracking for reps",
-      "Tiered rewards catalog — bikes, appliances, vouchers",
+      "Tiered rewards catalog - bikes, appliances, vouchers",
       "QR-code based purchase verification",
       "Leaderboards to drive competitive behavior",
       "Admin dashboard for full program management"
     ],
     techStack: ["Antigravity", "React", "Node.js", "PostgreSQL", "QR Code API", "SMS Integration"],
-    images: [
-      "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=1200&q=80",
-      "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1200&q=80",
-      "https://images.unsplash.com/photo-1590402494587-44b71d7772f6?w=1200&q=80",
-    ],
+    // SEC 7.3: Project-specific How I Built It
+    techDescription: "Built on Antigravity for rapid AI-assisted development.\nReact and Node.js for the full application stack.\nPostgreSQL for purchase history and points data.\nQR Code API for field purchase verification -\ncarpenters scan at point of sale, points update instantly.\nSMS Integration for reward notifications -\ncarpenters get their balance update without opening an app.\nBuilt for a real 30-year-old B2B manufacturing business.\nCurrently live and in active use.",
     year: "2024",
-    category: "B2B Loyalty"
+    category: "B2B Loyalty",
+    statusLabel: "Live in production",
+    // SEC 7.4: Honest private tool CTA
+    ctaTitle: "This app runs in production for Saraswati Ply House and their network of carpenters.",
+    ctaDescription: "Not open for public signup - it is a live business tool. Reach out if you would like a walkthrough.",
+    ctaEmail: "ayushi@merkri.media",
+    ctaButtonText: "Request a Walkthrough",
   }
 ];
 
@@ -154,338 +214,12 @@ const getSignalColor = (type) => {
 
 const scrollToProjects = () => {
   const element = document.getElementById('projects');
-  element?.scrollIntoView({ behavior: 'smooth' });
-};
-
-/* ─── INFINITE CAROUSEL COMPONENT ─── */
-const InfiniteCarousel = ({ slides, autoPlaySpeed = 2000 }) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [clonedSlides, setClonedSlides] = useState([]);
-  const [isTransitioning, setIsTransitioning] = useState(false);
-  const [perView, setPerView] = useState(3);
-  
-  const carouselRef = useRef(null);
-  const autoTimerRef = useRef(null);
-  const slideWidthRef = useRef(0);
-  const totalSlidesRef = useRef(0);
-  
-  const getPerView = useCallback(() => {
-    if (window.innerWidth <= 576) return 1;
-    if (window.innerWidth <= 768) return 2;
-    return 3;
-  }, []);
-  
-  const calcSlideWidth = useCallback(() => {
-    if (!carouselRef.current) return 0;
-    const carouselWidth = carouselRef.current.parentElement?.clientWidth || 0;
-    const gap = 32;
-    const width = (carouselWidth - (gap * (perView - 1))) / perView;
-    return width;
-  }, [perView]);
-  
-  const createClonedSlides = useCallback(() => {
-    if (!slides || slides.length === 0) return [];
-    
-    const firstClones = slides.slice(-perView).map((slide, idx) => ({
-      ...slide,
-      id: `clone-start-${idx}`,
-      originalIndex: slides.length - perView + idx
-    }));
-    
-    const originalSlides = slides.map((slide, idx) => ({
-      ...slide,
-      id: `original-${idx}`,
-      originalIndex: idx
-    }));
-    
-    const lastClones = slides.slice(0, perView).map((slide, idx) => ({
-      ...slide,
-      id: `clone-end-${idx}`,
-      originalIndex: idx
-    }));
-    
-    return [...firstClones, ...originalSlides, ...lastClones];
-  }, [slides, perView]);
-  
-  const jumpTo = useCallback((index, shouldAnimate = false) => {
-    if (!carouselRef.current || isTransitioning) return;
-    
-    if (!shouldAnimate) {
-      carouselRef.current.style.transition = 'none';
-    }
-    
-    const slideWidth = slideWidthRef.current;
-    const gap = 32;
-    const translateX = -(index * (slideWidth + gap));
-    carouselRef.current.style.transform = `translateX(${translateX}px)`;
-    
-    if (!shouldAnimate) {
-      carouselRef.current.offsetHeight;
-      carouselRef.current.style.transition = '';
-    }
-  }, [isTransitioning]);
-  
-  const next = useCallback(() => {
-    if (isTransitioning) return;
-    
-    setIsTransitioning(true);
-    const newIndex = currentIndex + 1;
-    setCurrentIndex(newIndex);
-  }, [currentIndex, isTransitioning]);
-  
-  const prev = useCallback(() => {
-    if (isTransitioning) return;
-    
-    setIsTransitioning(true);
-    const newIndex = currentIndex - 1;
-    setCurrentIndex(newIndex);
-  }, [currentIndex, isTransitioning]);
-  
-  const handleTransitionEnd = useCallback(() => {
-    setIsTransitioning(false);
-    
-    const totalClonedSlides = clonedSlides.length;
-    const originalStartIndex = perView;
-    const originalEndIndex = totalClonedSlides - perView - 1;
-    
-    if (currentIndex >= originalEndIndex) {
-      const newIndex = originalStartIndex;
-      setCurrentIndex(newIndex);
-      jumpTo(newIndex, false);
-    } else if (currentIndex < originalStartIndex) {
-      const newIndex = originalEndIndex;
-      setCurrentIndex(newIndex);
-      jumpTo(newIndex, false);
-    }
-  }, [currentIndex, clonedSlides.length, perView, jumpTo]);
-  
-  const navigateToSlide = useCallback((originalIndex) => {
-    if (isTransitioning) return;
-    
-    const originalStartIndex = perView;
-    const targetIndex = originalStartIndex + originalIndex;
-    
-    if (targetIndex >= 0 && targetIndex < clonedSlides.length) {
-      setIsTransitioning(true);
-      setCurrentIndex(targetIndex);
-    }
-  }, [clonedSlides.length, perView, isTransitioning]);
-  
-  const startAuto = useCallback(() => {
-    if (autoTimerRef.current) {
-      clearInterval(autoTimerRef.current);
-    }
-    
-    autoTimerRef.current = setInterval(() => {
-      next();
-    }, autoPlaySpeed);
-  }, [next, autoPlaySpeed]);
-  
-  const stopAuto = useCallback(() => {
-    if (autoTimerRef.current) {
-      clearInterval(autoTimerRef.current);
-      autoTimerRef.current = null;
-    }
-  }, []);
-  
-  const handleMouseEnter = useCallback(() => {
-    stopAuto();
-  }, [stopAuto]);
-  
-  const handleMouseLeave = useCallback(() => {
-    startAuto();
-  }, [startAuto]);
-  
-  const handleResize = useCallback(() => {
-    const newPerView = getPerView();
-    if (newPerView !== perView) {
-      setPerView(newPerView);
-    }
-    
-    const newSlideWidth = calcSlideWidth();
-    slideWidthRef.current = newSlideWidth;
-    
-    const newClonedSlides = createClonedSlides();
-    setClonedSlides(newClonedSlides);
-    
-    const originalStartIndex = newPerView;
-    setCurrentIndex(originalStartIndex);
-    
-    setTimeout(() => {
-      jumpTo(originalStartIndex, false);
-    }, 0);
-  }, [getPerView, calcSlideWidth, createClonedSlides, jumpTo, perView]);
-  
-  useEffect(() => {
-    if (slideWidthRef.current === 0) return;
-    
-    jumpTo(currentIndex, true);
-  }, [currentIndex, jumpTo]);
-  
-  useEffect(() => {
-    if (!slides || slides.length === 0) return;
-    
-    const initialPerView = getPerView();
-    setPerView(initialPerView);
-    
-    const newClonedSlides = createClonedSlides();
-    setClonedSlides(newClonedSlides);
-    totalSlidesRef.current = slides.length;
-    
-    const initialIndex = initialPerView;
-    setCurrentIndex(initialIndex);
-    
-    setTimeout(() => {
-      const width = calcSlideWidth();
-      slideWidthRef.current = width;
-      jumpTo(initialIndex, false);
-    }, 100);
-    
-    window.addEventListener('resize', handleResize);
-    
-    return () => {
-      window.removeEventListener('resize', handleResize);
-      stopAuto();
-    };
-  }, [slides, getPerView, createClonedSlides, calcSlideWidth, jumpTo, handleResize, stopAuto]);
-  
-  useEffect(() => {
-    if (slides && slides.length > 0 && clonedSlides.length > 0) {
-      startAuto();
-    }
-    
-    return () => {
-      stopAuto();
-    };
-  }, [slides, clonedSlides, startAuto, stopAuto]);
-  
-  if (!slides || slides.length === 0) {
-    return null;
+  const navbarHeight = 80;
+  if (element) {
+    const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+    const offsetPosition = elementPosition - navbarHeight;
+    window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
   }
-  
-  const slideWidth = slideWidthRef.current;
-  const gap = 32;
-  
-  return (
-    <div 
-      className="infinite-carousel-container"
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
-      <div className="carousel-wrapper">
-        <div
-          className="carousel-track"
-          ref={carouselRef}
-          onTransitionEnd={handleTransitionEnd}
-          style={{
-            gap: `${gap}px`,
-            transition: isTransitioning ? 'transform 0.65s cubic-bezier(0.4, 0, 0.2, 1)' : 'none'
-          }}
-        >
-          {clonedSlides.map((slide, idx) => (
-            <div
-              key={slide.id}
-              className="carousel-slide"
-              style={{
-                width: slideWidth ? `${slideWidth}px` : 'auto',
-                flexShrink: 0
-              }}
-            >
-              <div className="slide-inner">
-                <img
-                  src={slide}
-                  alt={`Slide ${idx}`}
-                  className="slide-image"
-                />
-                <div className="slide-overlay"></div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-      
-      <div className="carousel-dots">
-        {slides.map((_, idx) => (
-          <button
-            key={idx}
-            className={`dot ${idx === (currentIndex - perView) ? 'active' : ''}`}
-            onClick={() => navigateToSlide(idx)}
-            aria-label={`Go to slide ${idx + 1}`}
-          />
-        ))}
-      </div>
-    </div>
-  );
-};
-
-/* ─── LIGHTBOX ─── */
-const Lightbox = ({ images, startIndex, onClose }) => {
-  const [current, setCurrent] = useState(startIndex);
-  const prev = () => setCurrent(i => (i - 1 + images.length) % images.length);
-  const next = () => setCurrent(i => (i + 1) % images.length);
-
-  useEffect(() => {
-    const handler = (e) => {
-      if (e.key === 'Escape') onClose();
-      if (e.key === 'ArrowLeft') prev();
-      if (e.key === 'ArrowRight') next();
-    };
-    window.addEventListener('keydown', handler);
-    return () => window.removeEventListener('keydown', handler);
-  }, []);
-
-  return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 backdrop-blur-sm"
-      onClick={onClose}
-    >
-      <button
-        onClick={onClose}
-        className="absolute top-6 right-6 w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors text-white z-10"
-      >
-        <X className="w-5 h-5" />
-      </button>
-
-      <button
-        onClick={(e) => { e.stopPropagation(); prev(); }}
-        className="absolute left-6 w-12 h-12 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors text-white z-10"
-      >
-        <ChevronLeft className="w-6 h-6" />
-      </button>
-
-      <motion.img
-        key={current}
-        initial={{ opacity: 0, scale: 0.96 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.2 }}
-        src={images[current]}
-        alt=""
-        className="max-w-5xl max-h-[80vh] w-full object-contain rounded-2xl"
-        style={{ padding: '0 5rem' }}
-        onClick={(e) => e.stopPropagation()}
-      />
-
-      <button
-        onClick={(e) => { e.stopPropagation(); next(); }}
-        className="absolute right-6 w-12 h-12 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors text-white z-10"
-      >
-        <ChevronRightIcon className="w-6 h-6" />
-      </button>
-
-      <div className="absolute bottom-8 flex gap-2">
-        {images.map((_, i) => (
-          <button
-            key={i}
-            onClick={(e) => { e.stopPropagation(); setCurrent(i); }}
-            className={`w-2 h-2 rounded-full transition-all duration-300 ${i === current ? 'bg-white w-6' : 'bg-white/40'}`}
-          />
-        ))}
-      </div>
-    </motion.div>
-  );
 };
 
 /* ─── PROJECT DETAIL ─── */
@@ -493,8 +227,6 @@ const ProjectDetail = () => {
   const { projectId } = useParams();
   const navigate = useNavigate();
   const project = projects.find(p => p.id === projectId);
-  const [lightboxIndex, setLightboxIndex] = useState(null);
-  const [activeImage, setActiveImage] = useState(0);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -506,7 +238,7 @@ const ProjectDetail = () => {
         <div className="text-center">
           <h1 className="text-4xl font-bold mb-4">Project Not Found</h1>
           <button onClick={() => navigate('/')} className="text-violet-400 hover:text-violet-300">
-             Back to Portfolio
+            Back to Portfolio
           </button>
         </div>
       </div>
@@ -531,11 +263,45 @@ const ProjectDetail = () => {
         <div className="wireframe-octahedron"></div>
       </div>
 
-      {/* ── BREADCRUMB NAV ── */}
-      <div className="relative z-30 px-8 pt-8 pb-0">
-        <nav className="flex items-center gap-2 text-sm text-gray-400 max-w-7xl mx-auto">
+      {/* ── STICKY NAVBAR on project pages ── */}
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0A0A0A]/90 backdrop-blur-md border-b border-violet-500/15">
+        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           <button
             onClick={() => navigate('/')}
+            className="text-white font-semibold text-lg hover:text-violet-300 transition-colors tracking-tight"
+          >
+            Ayushi
+          </button>
+          <div className="flex items-center gap-6">
+            <button
+              onClick={() => { navigate('/'); setTimeout(() => scrollToProjects(), 300); }}
+              className="text-gray-300 hover:text-white text-sm font-medium transition-colors"
+            >
+              Projects
+            </button>
+            <a
+              href="https://www.linkedin.com/in/ayushiiaggarwall/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-300 hover:text-white transition-colors"
+            >
+              <Linkedin className="w-5 h-5" />
+            </a>
+            <a
+              href="mailto:ayushi@merkri.media"
+              className="text-gray-300 hover:text-white transition-colors"
+            >
+              <Mail className="w-5 h-5" />
+            </a>
+          </div>
+        </div>
+      </nav>
+
+      {/* ── BREADCRUMB NAV ── */}
+      <div className="relative z-30 px-8 pt-24 pb-0">
+        <nav className="flex items-center gap-2 text-sm text-gray-400 max-w-7xl mx-auto">
+          <button
+            onClick={() => { navigate('/'); setTimeout(() => scrollToProjects(), 300); }}
             className="hover:text-violet-400 transition-colors font-medium"
           >
             Projects
@@ -545,8 +311,8 @@ const ProjectDetail = () => {
         </nav>
       </div>
 
-      {/* ── HEADER ── */}
-      <section className="relative z-10 w-full py-16 md:py-24">
+      {/* ── HEADER — GLOBAL FIX 3: No floating View Live button ── */}
+      <section className="relative z-10 w-full py-12 md:py-20">
         <div className="max-w-7xl mx-auto px-8">
           <div className="flex flex-wrap items-center gap-3 mb-8">
             <span className="px-3 py-1 bg-black/50 backdrop-blur-sm border border-violet-500/40 rounded-full text-violet-300 text-xs font-medium">
@@ -565,20 +331,10 @@ const ProjectDetail = () => {
             {project.name}
           </h1>
 
-          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8">
-            <p className="text-lg md:text-xl text-gray-200 max-w-3xl leading-relaxed">
-              {project.description}
-            </p>
-            <a
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex-shrink-0 inline-flex items-center gap-2.5 px-7 py-3.5 bg-violet-600 hover:bg-violet-500 rounded-full text-white font-semibold transition-all duration-200 hover:scale-105"
-            >
-              View Live
-              <ArrowUpRight className="w-4 h-4" />
-            </a>
-          </div>
+          {/* Hero description only — no floating View Live button (GLOBAL FIX 3) */}
+          <p className="text-lg md:text-xl text-gray-200 max-w-3xl leading-relaxed">
+            {project.description}
+          </p>
 
           <div className="flex flex-wrap gap-2 mt-8">
             {project.tags.map(tag => (
@@ -590,8 +346,26 @@ const ProjectDetail = () => {
         </div>
       </section>
 
+      {/* ── STAT BAR (SEC 3.1 / 7.1) ── */}
+      {project.statBar && (
+        <div className="relative z-10 max-w-7xl mx-auto px-8 mb-16">
+          <div className="flex flex-wrap gap-0 border border-white/[0.08] rounded-2xl overflow-hidden">
+            {project.statBar.map((stat, i) => (
+              <div
+                key={i}
+                className="flex-1 min-w-[120px] px-6 py-4 bg-white/[0.02] border-r border-white/[0.06] last:border-r-0"
+              >
+                <p className="text-xs text-gray-500 uppercase tracking-wider mb-1">{stat.label}</p>
+                <p className="text-sm font-semibold text-white">{stat.value}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
       {/* ── CONTENT BODY ── */}
-      <div className="relative z-10 max-w-7xl mx-auto px-8 py-20">
+      <div className="relative z-10 max-w-7xl mx-auto px-8 py-8">
+        {/* Overview */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-24">
           <div className="lg:col-span-2">
             <p className="text-sm uppercase tracking-widest text-violet-400 font-semibold mb-4">Overview</p>
@@ -616,26 +390,20 @@ const ProjectDetail = () => {
               <p className="text-xs text-gray-500 uppercase tracking-wider mb-3">Status</p>
               <div className="flex items-center gap-2">
                 <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
-                <span className="text-green-300 text-sm font-medium">Live in production</span>
+                {/* SEC 4.1: Per-project status label */}
+                <span className="text-green-300 text-sm font-medium">{project.statusLabel || 'Live in production'}</span>
               </div>
             </div>
-
-            <a
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-between p-6 bg-violet-600/10 border border-violet-500/20 rounded-2xl group hover:bg-violet-600/20 transition-colors"
-            >
-              <span className="text-violet-300 font-medium text-sm">Open live project</span>
-              <ArrowUpRight className="w-4 h-4 text-violet-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-            </a>
           </div>
         </div>
 
+        {/* GLOBAL FIX 1 + 2: Consistent violet circles, correct numbering 01-05 */}
+
+        {/* 01 — The Problem */}
         <div className="mb-24">
           <div className="flex items-center gap-4 mb-8">
-            <div className="w-8 h-8 rounded-full bg-red-500/20 border border-red-500/30 flex items-center justify-center flex-shrink-0">
-              <span className="text-red-400 text-xs font-bold">01</span>
+            <div className="w-8 h-8 rounded-full bg-violet-600/20 border border-violet-500/30 flex items-center justify-center flex-shrink-0">
+              <span className="text-violet-400 text-xs font-bold">01</span>
             </div>
             <h2 className="text-3xl font-bold text-white">The Problem</h2>
           </div>
@@ -644,10 +412,11 @@ const ProjectDetail = () => {
           </div>
         </div>
 
+        {/* 02 — The Solution */}
         <div className="mb-24">
           <div className="flex items-center gap-4 mb-8">
-            <div className="w-8 h-8 rounded-full bg-green-500/20 border border-green-500/30 flex items-center justify-center flex-shrink-0">
-              <span className="text-green-400 text-xs font-bold">02</span>
+            <div className="w-8 h-8 rounded-full bg-violet-600/20 border border-violet-500/30 flex items-center justify-center flex-shrink-0">
+              <span className="text-violet-400 text-xs font-bold">02</span>
             </div>
             <h2 className="text-3xl font-bold text-white">The Solution</h2>
           </div>
@@ -656,9 +425,10 @@ const ProjectDetail = () => {
           </div>
         </div>
 
+        {/* 03 — What It Does */}
         <div className="mb-24">
           <div className="flex items-center gap-4 mb-10">
-            <div className="w-8 h-8 rounded-full bg-violet-500/20 border border-violet-500/30 flex items-center justify-center flex-shrink-0">
+            <div className="w-8 h-8 rounded-full bg-violet-600/20 border border-violet-500/30 flex items-center justify-center flex-shrink-0">
               <span className="text-violet-400 text-xs font-bold">03</span>
             </div>
             <h2 className="text-3xl font-bold text-white">What It Does</h2>
@@ -675,23 +445,17 @@ const ProjectDetail = () => {
           </div>
         </div>
 
-        
-        
-
-        {/* Tech Stack */}
+        {/* 04 — How I Built It (GLOBAL FIX 2: was skipped, now 04; GLOBAL FIX 5: project-specific text) */}
         <div className="mb-24">
           <div className="flex items-center gap-4 mb-10">
-            <div className="w-8 h-8 rounded-full bg-amber-500/20 border border-amber-500/30 flex items-center justify-center flex-shrink-0">
-              <span className="text-amber-400 text-xs font-bold">
-                {project.video && !project.video.startsWith('YOUR_') ? '06' : '05'}
-              </span>
+            <div className="w-8 h-8 rounded-full bg-violet-600/20 border border-violet-500/30 flex items-center justify-center flex-shrink-0">
+              <span className="text-violet-400 text-xs font-bold">04</span>
             </div>
             <h2 className="text-3xl font-bold text-white">How I Built It</h2>
           </div>
 
           <div className="pl-12">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-              {/* Left side - Content */}
               <div>
                 <div className="flex flex-wrap gap-3 mb-8">
                   {project.techStack.map((tech, i) => (
@@ -703,56 +467,29 @@ const ProjectDetail = () => {
                     </span>
                   ))}
                 </div>
-                <p className="text-gray-400 max-w-2xl leading-relaxed">
-                  The stack was chosen for speed of development, reliability in production, and the ability to iterate fast based on user feedback. Every technology decision optimized for shipping something real — not something impressive on paper.
+                {/* GLOBAL FIX 5: Project-specific tech description, not generic template */}
+                <p className="text-gray-400 max-w-2xl leading-relaxed whitespace-pre-line">
+                  {project.techDescription}
                 </p>
               </div>
 
-              {/* Right side - Video */}
+              {/* SEC 4.2: Video placed BELOW tags, wider */}
               {project.video && !project.video.startsWith('YOUR_') && (
                 <div className="order-first lg:order-last">
-                  <div 
+                  <div
                     className="relative rounded-2xl overflow-hidden bg-black/20 border border-white/[0.08] group cursor-pointer"
                     onClick={() => window.open(project.video, '_blank')}
                   >
                     <div className="aspect-video">
                       <iframe
-                        ref={(iframe) => {
-                          if (iframe) {
-                            iframe.onload = () => {
-                              // Store iframe reference for hover events
-                              iframe.dataset.videoId = project.video.split('/').pop().split('?')[0];
-                            };
-                          }
-                        }}
                         src={`${project.video.replace('watch?v=', 'embed/').replace('youtu.be/', 'www.youtube.com/embed/')}?enablejsapi=1&mute=1&showinfo=0&controls=0&modestbranding=1&rel=0`}
                         title={`${project.name} Demo Video`}
                         className="w-full h-full transition-opacity duration-300 pointer-events-none"
                         frameBorder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowFullScreen
-                        onMouseEnter={(e) => {
-                          const iframe = e.target;
-                          const videoId = project.video.split('/').pop().split('?')[0];
-                          // Send play command to YouTube iframe
-                          iframe.contentWindow.postMessage(JSON.stringify({
-                            event: 'command',
-                            func: 'playVideo',
-                            args: []
-                          }), '*');
-                        }}
-                        onMouseLeave={(e) => {
-                          const iframe = e.target;
-                          // Send pause command to YouTube iframe
-                          iframe.contentWindow.postMessage(JSON.stringify({
-                            event: 'command',
-                            func: 'pauseVideo',
-                            args: []
-                          }), '*');
-                        }}
                       />
                     </div>
-                    {/* Overlay gradient for better visual feedback */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
                   </div>
                 </div>
@@ -761,38 +498,76 @@ const ProjectDetail = () => {
           </div>
         </div>
 
-        {/* Final CTA */}
+        {/* 05 — Try It Yourself (GLOBAL FIX 2: was 05 skipped to 06, now sequential) */}
         <div className="relative overflow-hidden rounded-3xl p-12 text-center bg-gradient-to-br from-violet-900/40 via-purple-900/30 to-indigo-900/40 border border-violet-500/20">
           <div className="absolute inset-0 bg-gradient-to-br from-violet-600/10 to-purple-600/10 rounded-3xl blur-xl" />
           <div className="relative z-10">
-            <p className="text-sm uppercase tracking-widest text-violet-400 font-semibold mb-4">See it in action</p>
-            <h2 className="text-4xl font-bold mb-4 text-white">Try It Yourself</h2>
-            <p className="text-gray-300 text-lg mb-8 max-w-lg mx-auto">
-              The live demo is available right now. See how it performs with real usage.
+            {/* Section number */}
+            <div className="flex items-center justify-center gap-3 mb-6">
+              <div className="w-8 h-8 rounded-full bg-violet-600/20 border border-violet-500/30 flex items-center justify-center">
+                <span className="text-violet-400 text-xs font-bold">05</span>
+              </div>
+              <p className="text-sm uppercase tracking-widest text-violet-400 font-semibold">Try It Yourself</p>
+            </div>
+
+            <h2 className="text-4xl font-bold mb-4 text-white">{project.ctaTitle}</h2>
+            <p className="text-gray-300 text-lg mb-6 max-w-lg mx-auto">
+              {project.ctaDescription}
             </p>
-            <a
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 px-10 py-4 bg-violet-600 hover:bg-violet-500 rounded-full text-white font-bold text-lg transition-all duration-200 hover:scale-105"
-            >
-              Launch Live Demo
-              <ArrowUpRight className="w-5 h-5" />
-            </a>
+
+            {/* SEC 3.4: Demo credentials for Field Sales Tracker */}
+            {project.ctaCredentials && (
+              <div className="inline-block mb-8 text-left bg-black/40 border border-white/10 rounded-xl px-8 py-4">
+                <p className="text-gray-400 text-sm mb-1">
+                  <span className="text-gray-500">Email: </span>
+                  <span className="text-white font-mono">{project.ctaCredentials.email}</span>
+                </p>
+                <p className="text-gray-400 text-sm">
+                  <span className="text-gray-500">Password: </span>
+                  <span className="text-white font-mono">{project.ctaCredentials.password}</span>
+                </p>
+              </div>
+            )}
+
+            {/* SEC 7.4: Private tool — email instead of demo link */}
+            {project.ctaEmail ? (
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a
+                  href={`mailto:${project.ctaEmail}`}
+                  className="inline-flex items-center gap-3 px-10 py-4 bg-violet-600 hover:bg-violet-500 rounded-full text-white font-bold text-lg transition-all duration-200 hover:scale-105"
+                >
+                  {project.ctaButtonText}
+                  <ArrowUpRight className="w-5 h-5" />
+                </a>
+              </div>
+            ) : (
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-3 px-10 py-4 bg-violet-600 hover:bg-violet-500 rounded-full text-white font-bold text-lg transition-all duration-200 hover:scale-105"
+                >
+                  {project.ctaButtonText || 'Launch Live Demo'}
+                  <ArrowUpRight className="w-5 h-5" />
+                </a>
+                {/* SEC 4.3: Two buttons for Deep Researcher */}
+                {project.ctaButtonAlt && project.ctaButtonAltLink && (
+                  <a
+                    href={project.ctaButtonAltLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-3 px-10 py-4 bg-white/[0.06] hover:bg-white/[0.10] border border-white/10 rounded-full text-white font-bold text-lg transition-all duration-200 hover:scale-105"
+                  >
+                    {project.ctaButtonAlt}
+                    <ArrowUpRight className="w-5 h-5" />
+                  </a>
+                )}
+              </div>
+            )}
           </div>
         </div>
       </div>
-
-      {/* Lightbox */}
-      <AnimatePresence>
-        {lightboxIndex !== null && (
-          <Lightbox
-            images={project.images}
-            startIndex={lightboxIndex}
-            onClose={() => setLightboxIndex(null)}
-          />
-        )}
-      </AnimatePresence>
     </motion.div>
   );
 };
@@ -805,6 +580,12 @@ function Portfolio() {
     window.scrollTo(0, 0);
     navigate(`/project/${project.id}`);
   };
+
+  // Stack tags for new Stack section
+  const stackTags = [
+    "Antigravity", "Lovable", "LangChain", "LangGraph",
+    "Next.js", "React", "Supabase", "Python", "Streamlit"
+  ];
 
   return (
     <div className="min-h-screen text-white relative overflow-hidden bg-[#0A0A0A]">
@@ -844,105 +625,87 @@ function Portfolio() {
       <div className="bg-blob"></div>
       <div className="bg-blob"></div>
 
-      {/* ─── HERO SECTION ─── */}
-      <section className="hero-section-wrapper relative w-full overflow-hidden bg-[#0A0A0A]">
-        <div className="relative w-full" style={{ height: 'clamp(340px, 75vh, 860px)' }}>
-          <p
-            className="hero-tag"
-            style={{
-              position: 'absolute',
-              top: '2rem',
-              right: '18rem',
-              fontFamily: "'Helvetica Neue', 'Arial', sans-serif",
-              fontWeight: 300,
-              fontSize: 'clamp(1rem, 2.2vw, 1.9rem)',
-              letterSpacing: '0.04em',
-              color: '#ffffff',
-              margin: 0,
-              zIndex: 20,
-              lineHeight: 1.15,
-            }}
+      {/* ─── NAVBAR (SEC 2.4: Sticky navbar with Ayushi left, Projects + icons right) ─── */}
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0A0A0A]/90 backdrop-blur-md border-b border-violet-500/15">
+        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+          {/* Left: Ayushi (scrolls to top) */}
+          <button
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            className="text-white font-semibold text-lg hover:text-violet-300 transition-colors tracking-tight"
           >
-            FOUNDER
-          </p>
-          <img
-            src="/image/founder.png"
-            alt="Ayushi Aggarwal"
-            className="hero-image"
-            style={{
-              position: 'absolute',
-              inset: 0,
-              width: '100%',
-              height: '100%',
-              objectFit: 'contain',
-              objectPosition: 'center center',
-              backgroundColor: '#0A0A0A',
-            }}
-          />
+            Ayushi
+          </button>
 
-          <div
-            className="hero-text-container"
-            style={{
-              position: 'absolute',
-              bottom: '2rem',
-              left: '8rem',
-              maxWidth: '55%',
-              zIndex: 10,
-            }}
-          >
-            <h1
-              className="hero-name"
-              style={{
-                fontFamily: "'Helvetica Neue', 'Arial', sans-serif",
-                fontWeight: 300,
-                fontSize: 'clamp(2.5rem, 7vw, 6rem)',
-                lineHeight: 0.92,
-                letterSpacing: '-0.01em',
-                color: '#ffffff',
-                margin: '0 0 1.25rem 0',
-                textTransform: 'uppercase',
-              }}
-            >
-              AYUSHI<br />AGGARWAL
-            </h1>
-
-            <p
-              className="hero-description"
-              style={{
-                fontFamily: "'Georgia', serif",
-                fontSize: 'clamp(0.75rem, 1.2vw, 0.9rem)',
-                color: 'rgba(255,255,255,0.82)',
-                lineHeight: 1.65,
-                maxWidth: '420px',
-                margin: 0,
-              }}
-            >
-              Curious enough to ask why.
-              <br />
-              Impatient enough to just build it.
-              <br />
-              Something right now
-            </p>
-          </div>
-        </div>
-
-        <div className="button-container max-w-4xl mx-auto flex justify-center gap-4 px-6 py-5">
-          <div className="w-[32rem]">
+          {/* Right: Projects + LinkedIn + Email */}
+          <div className="flex items-center gap-6">
             <button
               onClick={scrollToProjects}
-              className="hero-button w-full py-5 text-center text-sm font-bold tracking-widest uppercase bg-violet-600 hover:bg-violet-500 transition-colors text-white"
-              style={{ letterSpacing: '0.15em' }}
+              className="text-gray-300 hover:text-white text-base font-medium transition-colors hidden sm:block"
             >
-              See What I've Built
+              Projects
             </button>
-          </div>
-          <div className="w-80">
             <a
               href="https://www.linkedin.com/in/ayushiiaggarwall/"
               target="_blank"
               rel="noopener noreferrer"
-              className="hero-button block w-full py-5 text-center text-sm font-bold tracking-widest uppercase bg-[#1a1a2e] hover:bg-gray-300 hover:text-[#1a1a2e] transition-colors text-gray-300"
-              style={{ letterSpacing: '0.15em' }}
+              className="text-gray-300 hover:text-white transition-colors"
+            >
+              <Linkedin className="w-5 h-5" />
+            </a>
+            <a
+              href="mailto:ayushi@merkri.media"
+              className="text-gray-300 hover:text-white transition-colors"
+            >
+              <Mail className="w-5 h-5" />
+            </a>
+          </div>
+        </div>
+      </nav>
+
+      {/* ─── HERO SECTION ─── */}
+      <section className="hero-section-wrapper relative w-full overflow-hidden bg-[#0A0A0A] pt-20">
+        {/* Hero image block */}
+        <div className="hero-image-block relative w-full">
+          {/* FOUNDER label */}
+          <p className="hero-tag">FOUNDER</p>
+
+          <img
+            src="/image/founder.png"
+            alt="Ayushi Aggarwal"
+            className="hero-image"
+          />
+
+          {/* Dark overlay on top of image */}
+          <div className="hero-overlay" />
+
+          {/* Name + tagline overlay — SEC 2.1: Removed third line "Something right now" */}
+          <div className="hero-text-container">
+            <h1 className="hero-name">
+              AYUSHI<br />AGGARWAL
+            </h1>
+            <p className="hero-description">
+              Curious enough to ask why.<br />
+              Impatient enough to just build it.
+            </p>
+          </div>
+        </div>
+
+        {/* SEC 2.1: Buttons — refined, inline, smaller */}
+        <div className="button-container">
+          <div className="btn-wrapper">
+            <button
+              onClick={scrollToProjects}
+              className="hero-button hero-button-primary"
+            >
+              See What I've Built
+            </button>
+          </div>
+          <div className="btn-wrapper">
+            <a
+              href="https://www.linkedin.com/in/ayushiiaggarwall/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hero-button hero-button-secondary"
             >
               Say Hi on LinkedIn
             </a>
@@ -950,20 +713,23 @@ function Portfolio() {
         </div>
       </section>
 
-      {/* About Section */}
+      {/* About Section — SEC 2.2 */}
       <section id="about" className="about-section py-32 px-6 relative z-10">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-6xl font-bold mb-16 text-center">ABOUT</h2>
-          <div className="space-y-16 lg:space-y-0 lg:grid lg:grid-cols-2 lg:gap-4 lg:items-center">
-            <div className="order-2 lg:order-1 lg:pr-8">
-              <div className="space-y-6 text-lg text-gray-300 leading-relaxed">
+          {/* SEC 2.2: Removed large centered ABOUT heading */}
+          <div className="space-y-16 lg:space-y-0 lg:grid lg:grid-cols-2 lg:gap-0 lg:items-center">
+            {/* SEC 2.2: Widened text column */}
+            <div className="order-2 lg:order-1 lg:pr-16">
+              <div className="space-y-6 text-lg text-gray-300 leading-relaxed text-justify">
                 <p>I build things that actually get used.</p>
-                <p>Not prototypes that live on GitHub. Not decks that explain what I'm "planning to build." Products with real users, real logins, and real businesses depending on them daily.</p>
-                <p>I run Merkri Media — a brand building agency helping B2B founders stop being the best-kept secret in their industry. I also build AI products, two of which have won hackathons and three of which are in active production use right now.</p>
+                {/* SEC 2.2: Removed quotes around "planning to build" */}
+                <p>Not prototypes that live on GitHub. Not decks that explain what I'm planning to build. Products with real users, real logins, and real businesses depending on them daily.</p>
+                {/* SEC 2.2: Updated text - "national hackathons" → "hackathons", added "right now" */}
+                <p>I run Merkri Media - a brand building agency helping B2B founders stop being the best-kept secret in their industry. I also build AI products, two of which have won national hackathons and three of which are in active production use right now.</p>
                 <p>I left Ericsson because I wanted to build something of my own. So I did. And I'm not done yet.</p>
               </div>
             </div>
-            <div className="order-1 lg:order-2 flex justify-center lg:justify-end lg:pl-8">
+            <div className="order-1 lg:order-2 flex justify-center lg:justify-end -ml-4">
               <div className="relative">
                 <div className="about-photo w-80 h-96 lg:w-[32rem] lg:h-96">
                   <img
@@ -979,59 +745,66 @@ function Portfolio() {
         </div>
       </section>
 
-      {/* Projects Section */}
+      {/* Projects Section — SEC 2.3 */}
       <section id="projects" className="py-32 px-6 relative z-10">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-6xl font-bold mb-16 text-center">PROJECTS</h2>
-          <div className="project-grid">
-            {projects.map((project, index) => (
-              project && project.name && project.description ? (
-                <motion.div
-                  key={project.id || index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.8, delay: index * 0.1 }}
-                  className="project-item glass-card rounded-2xl cursor-pointer group"
-                  onClick={() => handleProjectClick(project)}
-                >
-                  <div className="flex justify-between items-start mb-6">
-                    <div className="flex-1">
-                      <h3 className="text-2xl font-semibold text-white mb-2">{project.name}</h3>
-                      <p className="text-sm text-violet-400 font-medium mb-3">{project.description}</p>
-                    </div>
-                    <div className="ml-4">
-                      <ExternalLink className="w-5 h-5 text-violet-400 group-hover:text-violet-300 transition-colors" />
-                    </div>
-                  </div>
+          {/* SEC 2.3: Keep exact heading */}
+          <h2 className="text-5xl font-bold mb-4 text-center">Things I've Actually Built</h2>
+          <p className="text-gray-500 text-center text-sm mb-16">(not side projects that died in week two)</p>
 
-                  <div className="mb-6">
-                    <div className="flex flex-wrap gap-1 max-w-xs">
-                      {project.tags.map((tag, idx) => (
-                        <React.Fragment key={tag}>
-                          <span className="px-2 py-1 text-xs text-violet-300 font-medium bg-violet-600/10 border border-violet-500/20 rounded whitespace-nowrap">
-                            {tag}
-                          </span>
-                          {idx < project.tags.length - 1 && (
-                            <span className="text-violet-400 text-xs mx-1">·</span>
-                          )}
-                        </React.Fragment>
-                      ))}
-                    </div>
-                  </div>
+          {/* SEC 2.3: Project card grid — centered bottom row */}
+          <div className="project-grid-home">
+            {/* Row 1: 3 cards */}
+            <div className="project-row-top">
+              {projects.slice(0, 3).map((project, index) => (
+                project && project.name ? (
+                  <ProjectCard
+                    key={project.id}
+                    project={project}
+                    index={index}
+                    onClick={() => handleProjectClick(project)}
+                    animDir={index === 0 ? -20 : index === 2 ? 20 : 0}
+                    animAxis={index === 1 ? 'y' : 'x'}
+                  />
+                ) : null
+              ))}
+            </div>
+            {/* Row 2: 2 cards CENTERED */}
+            <div className="project-row-bottom">
+              {projects.slice(3, 5).map((project, index) => (
+                project && project.name ? (
+                  <ProjectCard
+                    key={project.id}
+                    project={project}
+                    index={index + 3}
+                    onClick={() => handleProjectClick(project)}
+                    animDir={index === 0 ? -20 : 20}
+                    animAxis="x"
+                  />
+                ) : null
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
 
-                  <div className={`text-sm font-medium ${getSignalColor(project.signalType)} flex items-center gap-2`}>
-                    <span className="w-2 h-2 bg-current rounded-full opacity-60"></span>
-                    {project.signal}
-                  </div>
-                </motion.div>
-              ) : null
+      {/* SEC 2.4: Stack section — between projects and footer */}
+      <section className="py-16 px-6 relative z-10">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-wrap justify-center gap-3">
+            {stackTags.map(tag => (
+              <span
+                key={tag}
+                className="px-4 py-2 bg-white/[0.03] border border-white/[0.08] rounded-full text-gray-400 text-sm font-medium hover:text-violet-300 hover:border-violet-500/30 transition-colors"
+              >
+                {tag}
+              </span>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Contact Section */}
+      {/* Footer / Contact */}
       <footer id="contact" className="border-t border-violet-500/20 py-24 px-6 relative z-10">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
@@ -1040,7 +813,7 @@ function Portfolio() {
               <p className="text-gray-400 text-sm">Building products that matter</p>
             </div>
             <div className="flex justify-center items-center gap-6 text-lg">
-              <a href="#projects" className="nav-link text-violet-400 hover:text-white">Projects</a>
+              <button onClick={scrollToProjects} className="nav-link text-violet-400 hover:text-white">Projects</button>
               <a href="https://www.linkedin.com/in/ayushiiaggarwall/" target="_blank" rel="noopener noreferrer" className="nav-link">LinkedIn</a>
               <a href="https://github.com/ayushiiaggarwall" target="_blank" rel="noopener noreferrer" className="nav-link">GitHub</a>
             </div>
@@ -1054,6 +827,51 @@ function Portfolio() {
         </div>
       </footer>
     </div>
+  );
+}
+
+/* ─── PROJECT CARD COMPONENT (SEC 2.3 redesign) ─── */
+function ProjectCard({ project, index, onClick, animDir, animAxis }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, [animAxis === 'y' ? 'y' : 'x']: animDir }}
+      whileInView={{ opacity: 1, x: 0, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.7, delay: index * 0.08 }}
+      // SEC 2.3: Entire card is clickable; consistent border (no stuck violet glow)
+      className="project-item glass-card rounded-2xl cursor-pointer group"
+      onClick={onClick}
+    >
+      {/* SEC 2.3: External link icon smaller + lower contrast, top right */}
+      <div className="flex justify-between items-start mb-5">
+        <h3 className="text-xl font-semibold text-white leading-tight">{project.name}</h3>
+        {/* Smaller, lower contrast icon */}
+        <ExternalLink className="w-3.5 h-3.5 text-gray-600 group-hover:text-violet-400 transition-colors flex-shrink-0 mt-1 ml-3" />
+      </div>
+
+      <p className="text-sm text-gray-400 leading-relaxed mb-5">{project.description}</p>
+
+      <div className="flex flex-wrap gap-1.5 mb-5">
+        {project.tags.slice(0, 3).map((tag) => (
+          <span key={tag} className="px-2.5 py-1 text-xs text-violet-300 font-medium bg-violet-600/10 border border-violet-500/20 rounded-lg whitespace-nowrap">
+            {tag}
+          </span>
+        ))}
+      </div>
+
+      <div className={`text-xs font-medium ${getSignalColor(project.signalType)} flex items-center gap-2 mb-5`}>
+        <span className="w-1.5 h-1.5 bg-current rounded-full opacity-70"></span>
+        {project.signal}
+      </div>
+
+      {/* SEC 2.3: Clear text CTA at bottom of card */}
+      <div className="pt-4 border-t border-white/[0.05]">
+        <span className="text-sm font-medium text-violet-400 group-hover:text-violet-300 transition-colors flex items-center gap-1.5">
+          View Project
+          <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+        </span>
+      </div>
+    </motion.div>
   );
 }
 
