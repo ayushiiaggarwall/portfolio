@@ -37,7 +37,7 @@ const projects = [
     ],
     techStack: ["Antigravity", "Next.js", "Supabase", "WhatsApp Business API", "React", "PostgreSQL"],
     // SEC 3.3: Project-specific How I Built It
-    techDescription: "Antigravity for AI-assisted rapid development.\nNext.js and React for the frontend.\nSupabase and PostgreSQL for real-time data.\nWhatsApp Business API for native rep reporting.\nBuilt for production from day one — not a prototype.\nNow running across 10 companies.",
+    techDescription: "Antigravity for AI-assisted rapid development.\nNext.js and React for the frontend.\nSupabase and PostgreSQL for real-time data.\nWhatsApp Business API for native rep reporting.\nBuilt for production from day one - not a prototype.\nNow running across 10 companies.",
     video: "YOUR_FIELD_SALES_VIDEO_URL",
     year: "2024",
     category: "B2B SaaS",
@@ -73,7 +73,7 @@ const projects = [
     techStack: ["LangChain", "LangGraph", "Python", "Streamlit", "OpenAI", "Tavily Search"],
     // SEC 4.2: Project-specific How I Built It
     techDescription: "Python and LangGraph for agent orchestration.\nTavily Search for real-time web research.\nLangChain for agent memory and tool use.\nStreamlit to ship a working demo fast without frontend overhead.\nOpenAI for synthesis and quality checking.\nBuilt in a hackathon sprint. Won first place.",
-    video: "https://youtu.be/Ly1F2DNx2T4?si=VOrgMarmJhWz5KVs",
+    video: "https://youtu.be/Ly1F2DNx2T4?si=R787RI5EMD0F77P2",
     year: "2024",
     category: "AI / Research",
     // SEC 4.1: Status tag fix
@@ -82,7 +82,6 @@ const projects = [
     ctaTitle: "The Streamlit demo is live.",
     ctaDescription: "Enter your API key and watch it research any topic in real time.",
     ctaButtonText: "Launch Live Demo",
-    ctaButtonAlt: "Watch Full Demo Video",
     ctaButtonAltLink: "https://youtu.be/Ly1F2DNx2T4?si=VOrgMarmJhWz5KVs",
   },
   {
@@ -275,7 +274,7 @@ const ProjectDetail = () => {
           <div className="flex items-center gap-6">
             <button
               onClick={() => { navigate('/'); setTimeout(() => scrollToProjects(), 300); }}
-              className="text-gray-300 hover:text-white text-sm font-medium transition-colors"
+              className="text-gray-300 hover:text-white text-base font-medium transition-colors"
             >
               Projects
             </button>
@@ -439,7 +438,7 @@ const ProjectDetail = () => {
                 <div className="w-5 h-5 rounded-full bg-violet-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
                   <div className="w-1.5 h-1.5 bg-violet-400 rounded-full" />
                 </div>
-                <span className="text-gray-300 text-sm leading-relaxed">{feature}</span>
+                <span className="text-gray-300 text-xl leading-relaxed">{feature}</span>
               </div>
             ))}
           </div>
@@ -468,7 +467,7 @@ const ProjectDetail = () => {
                   ))}
                 </div>
                 {/* GLOBAL FIX 5: Project-specific tech description, not generic template */}
-                <p className="text-gray-400 max-w-2xl leading-relaxed whitespace-pre-line">
+                <p className="text-gray-300 text-xl max-w-2xl leading-relaxed whitespace-pre-line">
                   {project.techDescription}
                 </p>
               </div>
@@ -719,7 +718,13 @@ function Portfolio() {
           {/* SEC 2.2: Removed large centered ABOUT heading */}
           <div className="space-y-16 lg:space-y-0 lg:grid lg:grid-cols-2 lg:gap-0 lg:items-center">
             {/* SEC 2.2: Widened text column */}
-            <div className="order-2 lg:order-1 lg:pr-16">
+            <motion.div 
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="order-2 lg:order-1 lg:pr-16"
+            >
               <div className="space-y-6 text-lg text-gray-300 leading-relaxed text-justify">
                 <p>I build things that actually get used.</p>
                 {/* SEC 2.2: Removed quotes around "planning to build" */}
@@ -728,8 +733,14 @@ function Portfolio() {
                 <p>I run Merkri Media - a brand building agency helping B2B founders stop being the best-kept secret in their industry. I also build AI products, two of which have won national hackathons and three of which are in active production use right now.</p>
                 <p>I left Ericsson because I wanted to build something of my own. So I did. And I'm not done yet.</p>
               </div>
-            </div>
-            <div className="order-1 lg:order-2 flex justify-center lg:justify-end -ml-4">
+            </motion.div>
+            <motion.div 
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="order-1 lg:order-2 flex justify-center lg:justify-end -ml-4"
+            >
               <div className="relative">
                 <div className="about-photo w-80 h-96 lg:w-[32rem] lg:h-96">
                   <img
@@ -740,7 +751,7 @@ function Portfolio() {
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-br from-violet-600/20 to-purple-600/20 rounded-2xl blur-xl -z-10"></div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
